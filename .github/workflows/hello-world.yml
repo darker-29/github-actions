@@ -1,8 +1,19 @@
 name: hello
-on: push
+on: [push, workflow_dispatch]
 jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
   hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello wprld"
-      - uses: actions/checkout@v4
+      - run: echo "hello world"
+
+  git-log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          tree -a .
+
