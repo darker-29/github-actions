@@ -15,5 +15,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        git log -1
-        tree -a .
+          git log -1
+          tree -a .
